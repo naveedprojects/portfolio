@@ -64,13 +64,13 @@ export const metadata: Metadata = {
     siteName: "Naveed Mazhar - AI Engineer",
     title: "Naveed Mazhar | AI Engineer & ML Systems Architect",
     description: "Expert AI Engineer with 6+ years building production-grade AI systems. Specializing in LLM & Agentic AI, Voice AI, Computer Vision, and Edge Deployment.",
-    images: ["/opengraph-image"],
+    images: ["/og-image.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Naveed Mazhar | AI Engineer & ML Systems Architect",
     description: "Expert AI Engineer with 6+ years building production-grade AI systems. LLM, Voice AI, Computer Vision, Edge Deployment.",
-    images: ["/opengraph-image"],
+    images: ["/og-image.png"],
     creator: "@naveedmazhar",
   },
   alternates: {

@@ -4,7 +4,7 @@ export default function JsonLd() {
     "@type": "Person",
     name: "Naveed Mazhar",
     url: "https://naveedmazhar.com",
-    image: "https://naveedmazhar.com/opengraph-image",
+    image: "https://naveedmazhar.com/og-image.png",
     sameAs: [
       "https://linkedin.com/in/n-mazhar",
       "https://github.com/naveedprojects",
