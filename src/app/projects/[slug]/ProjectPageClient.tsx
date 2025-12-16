@@ -427,7 +427,7 @@ export default function ProjectPageClient({ project, prevProject, nextProject }:
             {nextProject ? (
               <Link
                 href={`/projects/${nextProject.slug}`}
-                className="group flex flex-col p-4 bg-[#141414] border border-[#262626] rounded-xl hover:border-[#3b82f6]/50 transition-colors text-right ml-auto"
+                className="group flex flex-col p-4 bg-[#141414] border border-[#262626] rounded-xl hover:border-[#3b82f6]/50 transition-colors text-right"
               >
                 <span className="text-xs text-[#a1a1aa] mb-1 flex items-center gap-1 justify-end">
                   Next <ArrowRight className="w-3 h-3" />
