@@ -44,21 +44,21 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-6 bg-[#0d0d0d]">
+    <section id="experience" className="py-16 sm:py-24 px-4 sm:px-6 bg-[#0d0d0d]">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
-          <p className="text-[#a1a1aa]">6+ years building production AI systems</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Experience</h2>
+          <p className="text-[#a1a1aa] text-sm sm:text-base">6+ years building production AI systems</p>
         </motion.div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-[#262626] -translate-x-1/2" />
+          <div className="absolute left-1.5 md:left-1/2 top-0 bottom-0 w-px bg-[#262626] md:-translate-x-1/2" />
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -67,24 +67,24 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`relative flex flex-col md:flex-row gap-8 mb-12 ${
+              className={`relative flex flex-col md:flex-row gap-4 md:gap-8 mb-8 sm:mb-12 ${
                 index % 2 === 0 ? "md:flex-row-reverse" : ""
               }`}
             >
               {/* Timeline dot */}
-              <div className="absolute left-0 md:left-1/2 w-3 h-3 bg-[#3b82f6] rounded-full -translate-x-1/2 mt-2">
+              <div className="absolute left-0 md:left-1/2 w-3 h-3 bg-[#3b82f6] rounded-full md:-translate-x-1/2 mt-1.5 sm:mt-2">
                 {exp.current && (
                   <span className="absolute inset-0 rounded-full bg-[#3b82f6] animate-ping opacity-75" />
                 )}
               </div>
 
               {/* Content */}
-              <div className={`md:w-1/2 pl-8 md:pl-0 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                <div className="bg-[#141414] border border-[#262626] rounded-xl p-6 card-hover">
-                  <p className="text-[#3b82f6] font-mono text-sm mb-1">{exp.period}</p>
-                  <h3 className="text-xl font-bold mb-1">{exp.role}</h3>
-                  <p className="text-[#a1a1aa] mb-3">{exp.company}</p>
-                  <p className="text-sm text-[#a1a1aa]">{exp.highlight}</p>
+              <div className={`md:w-1/2 pl-6 sm:pl-8 md:pl-0 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
+                <div className="bg-[#141414] border border-[#262626] rounded-xl p-4 sm:p-6 card-hover">
+                  <p className="text-[#3b82f6] font-mono text-xs sm:text-sm mb-1">{exp.period}</p>
+                  <h3 className="text-lg sm:text-xl font-bold mb-1">{exp.role}</h3>
+                  <p className="text-[#a1a1aa] text-sm sm:text-base mb-2 sm:mb-3">{exp.company}</p>
+                  <p className="text-xs sm:text-sm text-[#a1a1aa]">{exp.highlight}</p>
                 </div>
               </div>
 

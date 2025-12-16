@@ -31,19 +31,19 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6">
+    <section id="skills" className="py-16 sm:py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills & Technologies</h2>
-          <p className="text-[#a1a1aa]">Tools I use to build production AI systems</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Skills & Technologies</h2>
+          <p className="text-[#a1a1aa] text-sm sm:text-base">Tools I use to build production AI systems</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {skillCategories.map((category, index) => (
             <motion.div
               key={category.title}
@@ -51,14 +51,14 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-[#141414] border border-[#262626] rounded-xl p-6 card-hover"
+              className="bg-[#141414] border border-[#262626] rounded-xl p-4 sm:p-6 card-hover"
             >
-              <h3 className="text-lg font-bold mb-4 text-[#3b82f6]">{category.title}</h3>
+              <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 text-[#3b82f6]">{category.title}</h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 bg-[#262626] text-[#fafafa] text-sm rounded-full hover:bg-[#3b82f6] transition-colors cursor-default"
+                    className="px-2.5 sm:px-3 py-1 bg-[#262626] text-[#fafafa] text-xs sm:text-sm rounded-full hover:bg-[#3b82f6] transition-colors cursor-default"
                   >
                     {skill}
                   </span>

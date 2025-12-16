@@ -53,21 +53,21 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-6">
+    <section id="projects" className="py-16 sm:py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-          <p className="text-[#a1a1aa] max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Featured Projects</h2>
+          <p className="text-[#a1a1aa] text-sm sm:text-base max-w-2xl mx-auto">
             Production systems delivering measurable business impact
           </p>
         </motion.div>
 
-        <div className="grid gap-6">
+        <div className="grid gap-4 sm:gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -75,45 +75,45 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group bg-[#141414] border border-[#262626] rounded-xl p-6 md:p-8 card-hover"
+              className="group bg-[#141414] border border-[#262626] rounded-xl p-4 sm:p-6 md:p-8 card-hover"
             >
-              <div className="flex flex-col md:flex-row md:items-start gap-6">
+              <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
                 <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
+                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center shrink-0"
                   style={{ backgroundColor: `${project.color}20` }}
                 >
-                  <project.icon className="w-7 h-7" style={{ color: project.color }} />
+                  <project.icon className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: project.color }} />
                 </div>
 
                 <div className="flex-1">
                   <div className="flex items-start justify-between mb-2">
                     <div>
-                      <h3 className="text-xl font-bold group-hover:text-[#3b82f6] transition-colors">
+                      <h3 className="text-lg sm:text-xl font-bold group-hover:text-[#3b82f6] transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-[#a1a1aa] text-sm">{project.company}</p>
+                      <p className="text-[#a1a1aa] text-xs sm:text-sm">{project.company}</p>
                     </div>
-                    <ArrowUpRight className="w-5 h-5 text-[#a1a1aa] group-hover:text-[#3b82f6] transition-colors" />
+                    <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#a1a1aa] group-hover:text-[#3b82f6] transition-colors" />
                   </div>
 
-                  <p className="text-[#a1a1aa] mb-4">{project.description}</p>
+                  <p className="text-[#a1a1aa] text-sm sm:text-base mb-3 sm:mb-4">{project.description}</p>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                     {project.metrics.map((metric) => (
                       <span
                         key={metric}
-                        className="px-3 py-1 bg-[#22c55e]/10 text-[#22c55e] text-sm font-mono rounded-full"
+                        className="px-2 sm:px-3 py-1 bg-[#22c55e]/10 text-[#22c55e] text-xs sm:text-sm font-mono rounded-full"
                       >
                         {metric}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-[#262626] text-[#a1a1aa] text-sm rounded-full"
+                        className="px-2 sm:px-3 py-1 bg-[#262626] text-[#a1a1aa] text-xs sm:text-sm rounded-full"
                       >
                         {tag}
                       </span>
