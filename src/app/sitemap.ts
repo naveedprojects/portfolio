@@ -1,9 +1,17 @@
 import { MetadataRoute } from "next";
+import { getAllProjectSlugs } from "@/data/projects";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://naveedmazhar.com";
+
+  // Project pages
+  const projectPages = getAllProjectSlugs().map((slug) => ({
+    url: `${baseUrl}/projects/${slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
+  }));
 
   return [
     {
@@ -36,5 +44,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    ...projectPages,
   ];
 }

@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ArrowUpRight, Phone, Camera, Plane, Cpu, Box } from "lucide-react";
 
 const projects = [
   {
+    slug: "voice-calling-agents",
     icon: Phone,
     title: "Voice Calling Agents",
     company: "Phi Consulting",
@@ -14,6 +16,7 @@ const projects = [
     color: "#3b82f6",
   },
   {
+    slug: "traffic-monitoring-system",
     icon: Camera,
     title: "Traffic Monitoring System",
     company: "Kodifly, Hong Kong",
@@ -23,6 +26,7 @@ const projects = [
     color: "#22c55e",
   },
   {
+    slug: "ai-dogfight-simulation",
     icon: Plane,
     title: "AI Dogfight Simulation",
     company: "Turkish Aerospace",
@@ -32,6 +36,7 @@ const projects = [
     color: "#f59e0b",
   },
   {
+    slug: "edge-ai-deployment",
     icon: Cpu,
     title: "Edge AI Deployment",
     company: "OMNOAI",
@@ -41,6 +46,7 @@ const projects = [
     color: "#ef4444",
   },
   {
+    slug: "3d-mesh-reconstruction",
     icon: Box,
     title: "3D Mesh Reconstruction",
     company: "Ideeza, Israel",
@@ -75,52 +81,56 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group bg-[#141414] border border-[#262626] rounded-xl p-4 sm:p-6 md:p-8 card-hover"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-                <div
-                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: `${project.color}20` }}
-                >
-                  <project.icon className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: project.color }} />
-                </div>
+              <Link
+                href={`/projects/${project.slug}`}
+                className="group block bg-[#141414] border border-[#262626] rounded-xl p-4 sm:p-6 md:p-8 card-hover cursor-pointer"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+                  <div
+                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ backgroundColor: `${project.color}20` }}
+                  >
+                    <project.icon className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: project.color }} />
+                  </div>
 
-                <div className="flex-1">
-                  <div className="flex items-start justify-between mb-2">
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-bold group-hover:text-[#3b82f6] transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="text-[#a1a1aa] text-xs sm:text-sm">{project.company}</p>
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between mb-2">
+                      <div>
+                        <h3 className="text-lg sm:text-xl font-bold group-hover:text-[#3b82f6] transition-colors">
+                          {project.title}
+                        </h3>
+                        <p className="text-[#a1a1aa] text-xs sm:text-sm">{project.company}</p>
+                      </div>
+                      <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#a1a1aa] group-hover:text-[#3b82f6] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                     </div>
-                    <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#a1a1aa] group-hover:text-[#3b82f6] transition-colors" />
-                  </div>
 
-                  <p className="text-[#a1a1aa] text-sm sm:text-base mb-3 sm:mb-4">{project.description}</p>
+                    <p className="text-[#a1a1aa] text-sm sm:text-base mb-3 sm:mb-4">{project.description}</p>
 
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
-                    {project.metrics.map((metric) => (
-                      <span
-                        key={metric}
-                        className="px-2 sm:px-3 py-1 bg-[#22c55e]/10 text-[#22c55e] text-xs sm:text-sm font-mono rounded-full"
-                      >
-                        {metric}
-                      </span>
-                    ))}
-                  </div>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                      {project.metrics.map((metric) => (
+                        <span
+                          key={metric}
+                          className="px-2 sm:px-3 py-1 bg-[#22c55e]/10 text-[#22c55e] text-xs sm:text-sm font-mono rounded-full"
+                        >
+                          {metric}
+                        </span>
+                      ))}
+                    </div>
 
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 sm:px-3 py-1 bg-[#262626] text-[#a1a1aa] text-xs sm:text-sm rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 sm:px-3 py-1 bg-[#262626] text-[#a1a1aa] text-xs sm:text-sm rounded-full"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>
